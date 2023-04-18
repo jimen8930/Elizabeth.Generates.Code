@@ -25,6 +25,7 @@ function writePassword() {
 //6. Generate the password with the number characters and the types of characters selected by the user
 function generatePassword() {
  console.log("Hi! You clicked the button.");
+ //Created a user prompts for the password length and password characters.
   var passwordLength = prompt("How many characters would you like your password to contain?");
     if (passwordLength < 8 || passwordLength > 128) {
     alert("Please enter a valid password length between 8 - 128");
@@ -32,9 +33,10 @@ function generatePassword() {
     }
     else if (isNaN(passwordLength)) {
       alert("Please enter a valid number between 8 and 128 characters.")
+      generatePassword()
     } 
     var upperCaseLetters = prompt("Would you like an upper case letter?");
-      if (upperCaseLetters === upperCaseLetters) {
+      if (upperCaseLetters !== upperCaseLetters) {
         alert("Please enter a valid upper case letter.");
       }
     var lowerCaseLetters = prompt("Would you like a lower case letter?");
@@ -59,15 +61,13 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-//var choices=["R","P","S"];
-//funtion getRandomNumber(min, max) {
-  //var randomNumber=Math.random() // Random number between 0 and 0.99
-  //var randomNumberUpToMax=randomNumber * max // Random number between 0 and max -0.1
-  //var randomNumberInRange= min + randomNumberUpToMax;
-  //return Math.floor(randomNumberInRange); // Remove the decimal places
-//}
-
-
+var password=[upperCaseLetters, lowerCaseLetters, specialCharacters, numericCharacters];
+function getRandomNumber(min, max) {
+  var randomNumber=Math.random() // Random number between 0 and 0.99
+  var randomNumberUpToMax=randomNumber * max // Random number between 0 and max -0.1
+  var randomNumberInRange= min + randomNumberUpToMax;
+  return Math.floor(randomNumberInRange); // Remove the decimal places
+}
 function getRandomValueFromArray(array) {
   var randomArrayPosition=getRandomNumber(0,array.length);
   return array[randomArrayPosition];
