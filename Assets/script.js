@@ -27,6 +27,8 @@ function generatePassword() {
  console.log("Hi! You clicked the button.");
  //Created a user prompts for the password length and password characters.
   var passwordLength = prompt("How many characters would you like your password to contain?");
+  passwordLength = Number(passwordLength)
+  console.log(passwordLength);
     if (passwordLength < 8 || passwordLength > 128) {
     alert("Please enter a valid password length between 8 - 128");
     generatePassword()
@@ -36,24 +38,28 @@ function generatePassword() {
       generatePassword()
     } 
     var upperCaseLetters = prompt("Would you like an upper case letter?");
+    var upperCaseLetters=confirm("Yay! Sprinkling some upper case letters.");
       if (upperCaseLetters !== upperCaseLetters) {
         alert("Please enter a valid upper case letter.");
       }
     var lowerCaseLetters = prompt("Would you like a lower case letter?");
+    var lowerCaseLetters=confirm("Yay! Sprinkling some lower case letters.");
       if (lowerCaseLetters !== lowerCaseLetters) {
         alert("Please enter a valid lower case letter?")
       }
     var specialCharacters = prompt("Would you like a special character?");
+    var specialCharacters=confirm("Yay! Sprinkling some special characters.");
       if(specialCharacters !== specialCharacters) {
         alert("Please enter a valid special character?");
       } 
     var numericCharacters = prompt("Would you like a numeric character?");
+    var numericCharacters=confirm("Yay! Sprinkling some numeric characters.");
       if(numericCharacters !== numericCharacters) {
         alert("Please enter a valid numeric character?");
       }
 
     //return "Generated password will go here!";
-}
+}//Make to confirm each 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -61,14 +67,31 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
+
 var password=[upperCaseLetters, lowerCaseLetters, specialCharacters, numericCharacters];
+console.log(password);
 function getRandomNumber(min, max) {
-  var randomNumber=Math.random() // Random number between 0 and 0.99
+  var randomNumber=Math.floor(Math.random()) 
+  console.log(randomNumber);
   var randomNumberUpToMax=randomNumber * max // Random number between 0 and max -0.1
+  console.log(randomNumberUpToMax)
   var randomNumberInRange= min + randomNumberUpToMax;
+  console.log(randomNumberInRange);
   return Math.floor(randomNumberInRange); // Remove the decimal places
 }
 function getRandomValueFromArray(array) {
   var randomArrayPosition=getRandomNumber(0,array.length);
   return array[randomArrayPosition];
 }
+
+
+function random() {
+  var randomNumber=Math.floor(Math.random()*password.length) 
+  console.log(randomNumber);
+
+}
+
+random()
+
+
+getRandomValueFromArray(password)
