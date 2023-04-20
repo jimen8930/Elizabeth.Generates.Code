@@ -1,6 +1,19 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+function getRandomNumber(min, max) {
+  var randomNumber=Math.floor(Math.random()) 
+  console.log(randomNumber);
+  var randomNumberUpToMax=randomNumber * max // Random number between 0 and max -0.1
+  console.log(randomNumberUpToMax)
+  var randomNumberInRange= min + randomNumberUpToMax;
+  console.log(randomNumberInRange);
+  return Math.floor(randomNumberInRange); // Remove the decimal places
+}
+function getRandomValueFromArray(array) {
+  var randomArrayPosition=getRandomNumber(0,array.length);
+  return array[randomArrayPosition];
+}
 //Password Arrays
 var upperCaseLetters =["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var lowerCaseLetters =["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -37,18 +50,27 @@ function generatePassword() {
       alert("Please enter a valid number between 8 and 128 characters.")
       generatePassword()
     } 
+    var password=""
     var upperCaseLetters = confirm("Would you like an upper case letter?");
-    
+    if (upperCaseLetters) { 
+      password+=getRandomValueFromArray(upperCaseLetters)
+    }
     var lowerCaseLetters = confrim("Would you like a lower case letter?");
-
+    if (lowerCaseLetters) { 
+      password+=getRandomValueFromArray(lowerCaseLetters)
+    }
     var specialCharacters = confirm("Would you like a special character?");
-    
+    if (specialCharacters) { 
+      password+=getRandomValueFromArray(specialCharacters)
+    }
     var numericCharacters = confirm("Would you like a numeric character?");
-    
+    if (numericCharacters) { 
+      password+=getRandomValueFromArray(numericCharacters)
+    }
       
 
-    //return "Generated password will go here!";
-}//Make to confirm each 
+    return password
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
@@ -59,28 +81,9 @@ generateBtn.addEventListener("click", writePassword);
 
 var password=[upperCaseLetters, lowerCaseLetters, specialCharacters, numericCharacters];
 console.log(password);
-function getRandomNumber(min, max) {
-  var randomNumber=Math.floor(Math.random()) 
-  console.log(randomNumber);
-  var randomNumberUpToMax=randomNumber * max // Random number between 0 and max -0.1
-  console.log(randomNumberUpToMax)
-  var randomNumberInRange= min + randomNumberUpToMax;
-  console.log(randomNumberInRange);
-  return Math.floor(randomNumberInRange); // Remove the decimal places
-}
-function getRandomValueFromArray(array) {
-  var randomArrayPosition=getRandomNumber(0,array.length);
-  return array[randomArrayPosition];
-}
 
 
-function random() {
-  var randomNumber=Math.floor(Math.random()*password.length) 
-  console.log(randomNumber);
-
-}
-
-random()
 
 
-getRandomValueFromArray(password)
+
+
