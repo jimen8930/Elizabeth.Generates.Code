@@ -16,13 +16,13 @@ function writePassword() {
 
 }
 //Generate the user password with a prompt
-//1. Ask the user how many characters
+//1. Ask the user how many characters.
 
-//2. Ask the user if they would like a special characters
-//Ask if the users wants to include uppercase letters
-//Ask the user if they want a lowercase letters
+//2. Ask the user if they would like a special characters.
+//3.Ask if the users wants to include uppercase letters.
+//4.Ask the user if they want a lowercase letters.
 //5. Ask the user if they would like to include numbers
-//6. Generate the password with the number characters and the types of characters selected by the user
+//6. Generate the password with the number characters and the types of characters selected by the user.
 function generatePassword() {
  console.log("Hi! You clicked the button.");
  //Created a user prompts for the password length and password characters.
@@ -37,26 +37,15 @@ function generatePassword() {
       alert("Please enter a valid number between 8 and 128 characters.")
       generatePassword()
     } 
-    var upperCaseLetters = prompt("Would you like an upper case letter?");
-    var upperCaseLetters=confirm("Yay! Sprinkling some upper case letters.");
-      if (upperCaseLetters !== upperCaseLetters) {
-        alert("Please enter a valid upper case letter.");
-      }
-    var lowerCaseLetters = prompt("Would you like a lower case letter?");
-    var lowerCaseLetters=confirm("Yay! Sprinkling some lower case letters.");
-      if (lowerCaseLetters !== lowerCaseLetters) {
-        alert("Please enter a valid lower case letter?")
-      }
-    var specialCharacters = prompt("Would you like a special character?");
-    var specialCharacters=confirm("Yay! Sprinkling some special characters.");
-      if(specialCharacters !== specialCharacters) {
-        alert("Please enter a valid special character?");
-      } 
-    var numericCharacters = prompt("Would you like a numeric character?");
-    var numericCharacters=confirm("Yay! Sprinkling some numeric characters.");
-      if(numericCharacters !== numericCharacters) {
-        alert("Please enter a valid numeric character?");
-      }
+    var upperCaseLetters = confirm("Would you like an upper case letter?");
+    
+    var lowerCaseLetters = confrim("Would you like a lower case letter?");
+
+    var specialCharacters = confirm("Would you like a special character?");
+    
+    var numericCharacters = confirm("Would you like a numeric character?");
+    
+      
 
     //return "Generated password will go here!";
 }//Make to confirm each 
