@@ -11,3 +11,5 @@ The program then prompts the user to define if they would like to include number
 When all parameters have been defined, the password will appear within the password box.
 
 The files that are included are the following; HTML, CSS, and JavaScript.
+
+![Screen Shot 2023-04-20 at 10 47 51 PM](https://user-images.githubusercontent.com/128547615/233528830-f9990e5e-0c7b-4283-8b3b-34f6e8434e3d.png)
