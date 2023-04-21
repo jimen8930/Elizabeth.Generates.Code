@@ -12,4 +12,11 @@ When all parameters have been defined, the password will appear within the passw
 
 The files that are included are the following; HTML, CSS, and JavaScript.
 
+Here is a screen shot with 10 characters.
 ![Screen Shot 2023-04-20 at 10 47 51 PM](https://user-images.githubusercontent.com/128547615/233528830-f9990e5e-0c7b-4283-8b3b-34f6e8434e3d.png)
+
+
+
+Here is another screen shot with 15 characters. 
+![Screen Shot 2023-04-20 at 11 12 58 PM](https://user-images.githubusercontent.com/128547615/233533539-9ceeec03-43c6-4824-b78c-f7ec650648d5.png)
+
