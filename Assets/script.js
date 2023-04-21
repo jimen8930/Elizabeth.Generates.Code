@@ -12,7 +12,7 @@ function getRandomValueFromArray(array) {
   var randomArrayPosition = getRandomNumber(0, array.length);
   return array[randomArrayPosition];
 }
-//Password Arrays
+//Password Arrays needed to generate a random password. 
 var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 var numericCharacters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -36,10 +36,12 @@ function writePassword() {
 //6. Generate the password with the number characters and the types of characters selected by the user.
 function generatePassword() {
   console.log("Hi! You clicked the button.");
-  //Created a user prompts for the password length and password characters.
+  //I created a user prompts for the password length and the amount of password characters.
   var passwordLength = prompt("How many characters would you like your password to contain?");
   passwordLength = Number(passwordLength)
   console.log(passwordLength);
+  //These are the conditions needed to determine if the code will run. 
+  //The alerts are included so the user knows to insert correct input.
   if (passwordLength < 8 || passwordLength > 128) {
     alert("Please enter a valid password length between 8 - 128");
     generatePassword()
@@ -49,7 +51,9 @@ function generatePassword() {
     generatePassword()
   }
   var password = ""
+  //This allows access to the array.
   var options=[]
+  //Confirm to verify all the characters they will like in their password. 
   var letUpperCaseLetters = confirm("Would you like an upper case letter?");
   if (letUpperCaseLetters) {
     options=options.concat(upperCaseLetters)
@@ -66,7 +70,7 @@ function generatePassword() {
   if (letNumericCharacters) {
     options=options.concat(numericCharacters)
   }
-  
+  //Included for loop so the password length is included with all the characters and should run as many times as needed. 
 for (let i= 0; i < passwordLength; i++) {
   password += getRandomValueFromArray(options)
   
