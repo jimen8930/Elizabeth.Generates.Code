@@ -52,21 +52,21 @@ function generatePassword() {
     } 
     var password=""
     var upperCaseLetters = confirm("Would you like an upper case letter?");
-    if (upperCaseLetters) { 
+      if (upperCaseLetters) { 
       password+=getRandomValueFromArray(upperCaseLetters)
-    }
-    var lowerCaseLetters = confrim("Would you like a lower case letter?");
-    if (lowerCaseLetters) { 
+     }
+    var lowerCaseLetters = confirm("Would you like a lower case letter?");
+     if (lowerCaseLetters) { 
       password+=getRandomValueFromArray(lowerCaseLetters)
-    }
+     }
     var specialCharacters = confirm("Would you like a special character?");
-    if (specialCharacters) { 
+     if (specialCharacters) { 
       password+=getRandomValueFromArray(specialCharacters)
-    }
+     }
     var numericCharacters = confirm("Would you like a numeric character?");
-    if (numericCharacters) { 
+     if (numericCharacters) { 
       password+=getRandomValueFromArray(numericCharacters)
-    }
+     }
       
 
     return password
@@ -79,8 +79,6 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-var password=[upperCaseLetters, lowerCaseLetters, specialCharacters, numericCharacters];
-console.log(password);
 
 
 
