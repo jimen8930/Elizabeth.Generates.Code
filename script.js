@@ -49,10 +49,10 @@ function generatePassword() {
   else if (isNaN(passwordLength)) {
     alert("Please enter a valid number between 8 - 128 characters.")
     generatePassword()
-
-    return
+  
+    return passwordLength
   } 
-    
+  
 
   var password = ""
   //This allows access to the array.
